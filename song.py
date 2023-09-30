@@ -1,10 +1,10 @@
-# Docstrings (below is slightly too verbose) (PEP257)
+# Docstrings (PEP257) and further OOP
 class Song:
     """Class to represent a song
 
     Attributes:
         title (str): The title of the song
-        artist (Artist): An artist object representing the songs creator.
+        artist (str): The name representing the songs creator.
         duration (int): The duration of the song in seconds.  May be zero
     """
 
@@ -25,7 +25,7 @@ class Album:
     Attributes:
         name (str): The name of the album.
         year (int): The year was album was released.
-        artist: (Artist): The artist responsible for the album. If not specified,
+        artist: (str): The name of the artist responsible for the album. If not specified,
         the artist will default to an artist with the name "Various Artists".
         tracks (List[Song]):  A list of the songs on the album.
 
@@ -37,7 +37,7 @@ class Album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = Artist("Various Artists")
+            self.artist = "Various Artists"
         else:
             self.artist = artist
 
@@ -101,7 +101,7 @@ class Artist:
         album_found = find_object(name, self.albums)
         if album_found is None:
             print(name + " not found")
-            album_found = Album(name, year, self)
+            album_found = Album(name, year, self.name)
             self.add_album(album_found)
         else:
             print("Found album " + name)
@@ -153,39 +153,3 @@ if __name__ == '__main__':
     print("There are {} artists".format(len(artists)))
 
     create_checkfile(artists)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
