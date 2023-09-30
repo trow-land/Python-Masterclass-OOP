@@ -1,35 +1,16 @@
 # Each class will be in its own file for the sake of this exercise
 
-from player import Player
+from enemy import Enemy, Troll
 
-tom = Player("Tom")
+ugly_troll = Troll()
+print("Ugly troll - {}".format(ugly_troll))
 
-print(tom.name)
-print(tom.lives)
-tom.lives -= 1
-print(tom)
+another_troll = Troll("Ug", 18, 1)
+print("Another troll - {}".format(another_troll))
 
-tom.lives -= 1
-print(tom)
+brother = Troll("Urg", 23)
+print("Brother - {}".format(brother))
 
-tom.lives -= 1
-print(tom)
 
-tom.lives -= 1
-print(tom)
 
-tom.level += 1
-print(tom)
-
-tom.level += 1
-print(tom)
-
-tom.level += 1
-print(tom)
-
-tom.level += 5
-print(tom)
-
-tom.level -= 3
-print(tom)
 
