@@ -19,6 +19,16 @@ class Enemy:
 
 
 class Troll(Enemy):
-    pass
 
+    def __init__(self, name):
+        super().__init__(name=name, lives=1, hit_points=23)  # This is the recommended way to call methods in the superclass
+
+    def grunt(self):
+        print("Me {0.name}. {0.name} stomp you!".format(self))
+
+
+class Vampyre(Enemy):
+
+    def __init__(self, name):
+        super().__init__(name=name, lives=3, hit_points=12)
 
