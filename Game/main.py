@@ -27,4 +27,6 @@ print("-" * 40)
 another_troll.take_damage(30)
 print(another_troll)
 
-
+while vampire.alive:
+    vampire.take_damage(1)
+    print(vampire)
