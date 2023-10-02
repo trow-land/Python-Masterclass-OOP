@@ -15,3 +15,7 @@ This repository contains projects completed as part of the "Learn Python Program
 - **Account.py**:
   - A class definition for managing a rudimentary bank account, encompassing balance tracking and transaction history functionalities.
   - **Key Concepts**: Class Definition and Object Instantiation, Encapsulation, Method Definition, Static Methods, Name Mangling, Control Flow
+
+
+- **ducks.py**:
+  - A small demonstration of polymorphism featuring 2 classes; Duck and Penguin. The script demonstrates that  the test_duck function still works correctly with a penguin object.
