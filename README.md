@@ -5,7 +5,7 @@ This repository contains projects completed as part of the "Learn Python Program
 ## Directory Structure:
 - **Game Directory**:
   - A simplified game simulation designed to demonstrate the creation of various character classes with distinct attributes and methods.
-  - **Key Concepts**: OOP, Encapsulation, Class Imports, Method Overloading, Super Methods, and Properties.
+  - **Key Concepts**: OOP, Encapsulation, Class Imports, Method Overriding, Super Methods, and Properties.
 
 - **Songs Directory**:
   - A program engineered to parse song information from a text file and instantiate respective Artist, Album, and Song objects.
