@@ -1,35 +1,32 @@
 # Each class will be in its own file for the sake of this exercise
 
-from player import Player
+from enemy import Enemy, Troll, Vampyre
 
-tom = Player("Tom")
+ugly_troll = Troll("Pug")
+print("Ugly troll - {}".format(ugly_troll))
 
-print(tom.name)
-print(tom.lives)
-tom.lives -= 1
-print(tom)
+another_troll = Troll("Ug")
+print("Another troll - {}".format(another_troll))
 
-tom.lives -= 1
-print(tom)
+brother = Troll("Urg")
+print("Brother - {}".format(brother))
 
-tom.lives -= 1
-print(tom)
+ugly_troll.grunt()
+another_troll.grunt()
+brother.grunt()
 
-tom.lives -= 1
-print(tom)
 
-tom.level += 1
-print(tom)
+vampire = Vampyre("Dracula")
+print(vampire)
+vampire.hit_points -= 3
+vampire.take_damage(5)
+print(vampire)
 
-tom.level += 1
-print(tom)
 
-tom.level += 1
-print(tom)
+print("-" * 40)
+another_troll.take_damage(30)
+print(another_troll)
 
-tom.level += 5
-print(tom)
-
-tom.level -= 3
-print(tom)
-
+while vampire.alive:
+    vampire.take_damage(1)
+    print(vampire)

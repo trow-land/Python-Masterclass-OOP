@@ -6,6 +6,7 @@ class Player(object):
         self._level = 1
         self._score = 0
 
+
     def _get_lives(self):
         return self._lives
 
