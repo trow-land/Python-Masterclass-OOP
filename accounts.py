@@ -13,30 +13,30 @@ class Account:  # reminder: CamelCase (capitalising the first letter of each wor
 
 # before the init method gets called the __new__ method gets called (which is technically the constructor)
     def __init__(self, name, balance):   # customised the instance
-        self.name = name
-        self.balance = balance
-        self.transaction_list = []
-        print("Account created for " + self.name)
+        self._name = name
+        self.__balance = balance
+        self._transaction_list = [(Account._current_time(), balance)]
+        print("Account created for " + self._name)
 
     def deposit(self, amount):
         if amount > 0:
-            self.balance += amount
+            self.__balance += amount
             self.show_balance()
-            self.transaction_list.append((Account._current_time(), amount))
+            self._transaction_list.append((Account._current_time(), amount))
 
     def withdraw(self, amount):
-        if 0 < amount <= self.balance:
-            self.balance -= amount
-            self.transaction_list.append((Account._current_time(), -amount))
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            self._transaction_list.append((Account._current_time(), -amount))
         else:
             print("Unable to withdraw due to insufficient funds")
         self.show_balance()
 
     def show_balance(self):
-        print("Balance: ", self.balance)
+        print("Balance: ", self.__balance)
 
     def show_transactions(self):
-        for date, amount in self.transaction_list:
+        for date, amount in self._transaction_list:
             if amount > 0:
                 transaction_type = "deposited"
             else:
@@ -54,6 +54,15 @@ if __name__ == '__main__':
     tom.withdraw(5000)
     tom.show_transactions()
 
+    steph = Account("Steph", 800)
+    steph.__balance = 200  # prefixing by __ tells python the mangle the name for us
+    steph.deposit(100)
+    steph.withdraw(200)
+    steph.show_transactions()
+    steph.show_balance()
+    print(steph.__dict__)
+    steph._Account__balance = 40  # This is discouraged hence why it is hard to write
+    steph.show_balance()
 
-
+    # If you end with __ then the name will not get mangled
 
